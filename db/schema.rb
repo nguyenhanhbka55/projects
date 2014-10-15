@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008014202) do
+ActiveRecord::Schema.define(version: 20141013080500) do
 
   create_table "albums", force: true do |t|
     t.string   "name"
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(version: 20141008014202) do
     t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "book", force: true do |t|
+    t.string  "title",  limit: 100, null: false
+    t.string  "author", limit: 200, null: false
+    t.integer "year",               null: false
   end
 
   create_table "books", force: true do |t|
@@ -44,6 +50,11 @@ ActiveRecord::Schema.define(version: 20141008014202) do
   create_table "countries", force: true do |t|
     t.string   "name"
     t.integer  "population"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dbs", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -75,6 +86,14 @@ ActiveRecord::Schema.define(version: 20141008014202) do
     t.datetime "updated_at"
   end
 
+  create_table "people", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "birthday"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.string   "subject"
     t.string   "content"
@@ -88,9 +107,17 @@ ActiveRecord::Schema.define(version: 20141008014202) do
     t.decimal  "price",           precision: 7, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "weight"
-    t.boolean  "instock"
     t.date     "expiration_date"
+    t.string   "image_url"
+    t.text     "description",                             null: false
+  end
+
+  create_table "profiles", force: true do |t|
+    t.string   "name"
+    t.string   "avatar"
+    t.text     "resume"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

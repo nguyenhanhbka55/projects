@@ -1,23 +1,28 @@
-<h1>Listing products</h1>
+<h1 class="sidebar11">Listing products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- create form search --> 
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<!-- /end create form -->
+	<% #@products.each do |product|%>
+	<% if !@products.blank? %>
+	<% for product in @products %>
+	    <div class="product_detail1">
+			<div class="pimage">
+		 		<%= image_tag(product.image_url, class: 'img', :size => '160x160') %>  
+			</div>
+			<div class="pdetail1">
+				<div class="pname">
+					<%= product.name %>
+				</div>
+			<div class="pprice">
+				$<%= product.price %>
+			</div>
+			<div class="plink">
+				<%= link_to 'Show', product %>
+			</div>
+			</div>	
+		</div><!-- /product_detail -->
+	 <% end %>
+	<% else %>
+	  <%= render :nothing=>true%>
+	<% end %>

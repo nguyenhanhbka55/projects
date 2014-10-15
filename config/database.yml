@@ -11,7 +11,14 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  database: projects  
+  host: localhost
+  socket: /opt/lampp/var/mysql/mysql.sock
+  username: root
+  password:
+  pool: 5
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

@@ -1,17 +1,27 @@
 Rails.application.routes.draw do
 
+  resources :profiles
+
 resources :posts
 
 resources :comments
 
-resources :products, only: [:index, :show]
-
 get 'example/test'
 
+#set layout default for rails homepage : localhost:3000
+#root :to => "products#index"
+
+#resources :products, only: [:index, :show, :search, :create]
+
+resources :products
+resources :products do
+  get 'search', on: :collection
+end
 
 resources :posts do
   resources :comments
 end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

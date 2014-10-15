@@ -26,10 +26,6 @@ Book.create(title: 'Photographing Architecture and Interiors').authors.create([
   ])
 Book.create(title: 'Der Zauberberg').authors.create(first_name: 'Thomas', last_name: 'Mann')
 Book.create(title: 'In einer Familie').authors.create(first_name: 'Heinrich', last_name: 'Mann')
-Product.create(name: 'Apple', price: 1)
-Product.create(name: 'Orange', price: 1)
-Product.create(name: 'Pineapple', price: 2.4)
-Product.create(name: 'Marble cake', price: 3)
 
 Post.create(subject: 'RoR programming', content: 'RoR is advanced language programming', published_at: 2014)
 Post.create(subject: 'RoR programming', content: 'RoR is advanced language programming', published_at: 2014)

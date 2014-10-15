@@ -1,0 +1,8 @@
+
+<% @products.each do |product| %>
+		<div class="products">
+			<h4 class="pname">Name: <%=  product.name %></h4>
+			<p class="ppri end ce">Price: <%= product.price %></p>			
+			<p><%= link_to 'Show' , product  %></p>
+		</div>		
+<% end %>
