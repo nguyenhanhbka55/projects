@@ -4,17 +4,13 @@ class ProductsController < ApplicationController
   def index
     #@products = Product.where('price = 0.45')
     @products = Product.find_by_sql("select * from products")    
-    #if !@products?blank?
-      #render partial: "ad", locals: {ad: @products}
-    #else
-     # render nothing: true
-    #end
+    #@products = Product.all   
     
     #@products = Product.where("name LIKE?",'%l%')
     #@products = Product.where.not(id:[2,5])    
-    #render :nothing => true, :status => 401 // rerurn error code for 401
-    #render json: @products // return view at json code
-    #render xml: @products
+    #render :nothing => true, :status => 401
+    #render json: @products 
+    #render xml: @products    
   end
 
   def search

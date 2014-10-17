@@ -1,12 +1,24 @@
 Rails.application.routes.draw do
+  
+  get 'users/new'
+
+  get 'search/index'
+
+  get 'store/index'
+
+  resources :line_items
+
+  resources :carts
 
   resources :profiles
 
 resources :posts
 
 resources :comments
-
+resources :users
 get 'example/test'
+
+get 'store/index'
 
 #set layout default for rails homepage : localhost:3000
 #root :to => "products#index"
